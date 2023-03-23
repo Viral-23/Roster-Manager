@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tuition.project3.TuitionManagerController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <AnchorPane prefHeight="1200.0" prefWidth="1200.0">
+      <children>
+         <Label fx:id="runMsg" layoutX="14.0" layoutY="14.0" />
+         <ScrollPane fx:id="rosterScroll" layoutX="655.0" layoutY="73.0" prefHeight="439.0" prefWidth="494.0">
+            <content>
+               <TextFlow fx:id="printedRosterArea" prefHeight="436.0" prefWidth="478.0" />
+            </content>
+         </ScrollPane>
+         <ScrollPane fx:id="enrollmentScroll" layoutX="655.0" layoutY="723.0" prefHeight="314.0" prefWidth="494.0">
+            <content>
+               <TextFlow fx:id="printedEnrollmentRosterArea" prefHeight="311.0" prefWidth="476.0" />
+            </content>
+         </ScrollPane>
+         <ScrollPane fx:id="semesterScroll" layoutX="39.0" layoutY="810.0" prefHeight="314.0" prefWidth="562.0">
+            <content>
+               <TextFlow fx:id="semesterEndArea" prefHeight="312.0" prefWidth="353.0" />
+            </content>
+         </ScrollPane>
+         <Pane layoutX="53.0" layoutY="150.0" prefHeight="56.0" prefWidth="570.0">
+            <children>
+                <Button fx:id="onAddButtonClick" layoutX="14.0" layoutY="14.0" onAction="#onAddButtonClick" text="Add" />
+            
+                <Label fx:id="addConfirmationText" layoutX="14.0" layoutY="38.0" prefHeight="17.0" prefWidth="353.0" />
+               <TextField fx:id="addStudentField" layoutX="54.0" layoutY="14.0" prefHeight="26.0" prefWidth="484.0" />
+            </children>
+         </Pane>
+         <Pane layoutX="61.0" layoutY="250.0" prefHeight="56.0" prefWidth="562.0">
+            <children>
+               <Button fx:id="onRemoveButtonClick" mnemonicParsing="false" onAction="#onRemoveButtonClick" text="Remove" />
+               <TextField fx:id="removeStudentField" layoutX="62.0" prefHeight="26.0" prefWidth="464.0" />
+               <Label fx:id="removeConfirmationText" layoutY="27.0" prefHeight="17.0" prefWidth="353.0" />
+            </children>
+         </Pane>
+         <Pane layoutX="662.0" layoutY="568.0" prefHeight="56.0" prefWidth="218.0">
+            <children>
+               <Button fx:id="onPrintButtonClick" layoutX="1.0" layoutY="9.0" mnemonicParsing="false" onAction="#onPrintButtonClick" text="Print" />
+               <ChoiceBox fx:id="sortingMethod" layoutX="43.0" layoutY="9.0" prefWidth="150.0" />
+               <Label fx:id="printConfirmation" layoutX="1.0" layoutY="35.0" prefHeight="17.0" prefWidth="306.0" />
+            </children>
+         </Pane>
+         <Pane layoutX="655.0" layoutY="615.0" prefHeight="66.0" prefWidth="232.0">
+            <children>
+               <Button fx:id="onFilterButtonClick" layoutX="8.0" layoutY="17.0" mnemonicParsing="false" onAction="#onFilterButtonClick" text="Filter" />
+               <ChoiceBox fx:id="filterMethod" layoutX="52.0" layoutY="17.0" prefWidth="150.0" />
+               <Label fx:id="filterConfirmationText" layoutX="8.0" layoutY="43.0" prefHeight="17.0" prefWidth="306.0" />
+            </children>
+         </Pane>
+         <Pane layoutX="944.0" layoutY="612.0" prefHeight="73.0" prefWidth="205.0">
+            <children>
+               <Button fx:id="onChooseFileClickButton" layoutX="19.0" layoutY="22.0" mnemonicParsing="false" onAction="#onChooseFileClickButton" text="Choose File" />
+               <Button fx:id="onLoadDataButtonClick" layoutX="100.0" layoutY="22.0" mnemonicParsing="false" onAction="#onLoadDataButtonClick" text="Load Data" />
+               <Label fx:id="selectedFile" layoutX="19.0" layoutY="51.0" prefHeight="17.0" prefWidth="294.0" />
+            </children>
+         </Pane>
+         <Pane layoutX="57.0" layoutY="331.0" prefHeight="66.0" prefWidth="562.0">
+            <children>
+               <Button fx:id="onChangeMajorbuttonClick" layoutX="7.0" layoutY="18.0" mnemonicParsing="false" onAction="#onChangeMajorButtonClick" text="Change Major" />
+               <Label fx:id="changeMajorConfirmationText" layoutX="7.0" layoutY="44.0" prefHeight="17.0" prefWidth="541.0" />
+               <ChoiceBox fx:id="majorMethod" layoutX="101.0" layoutY="18.0" prefWidth="150.0" />
+               <TextField fx:id="changeMajorField" layoutX="251.0" layoutY="18.0" prefHeight="26.0" prefWidth="288.0" />
+            </children>
+         </Pane>
+         <Pane layoutX="635.0" layoutY="1080.0" prefHeight="73.0" prefWidth="443.0">
+            <children>
+               <Button fx:id="onEnrollmentPrintButtonClick" layoutX="21.0" layoutY="16.0" mnemonicParsing="false" onAction="#onEnrollmentPrintButtonClick" text="Print" />
+               <Label fx:id="enrollmentPrintConfirmation" layoutX="21.0" layoutY="42.0" prefHeight="17.0" prefWidth="245.0" />
+               <ChoiceBox fx:id="enrollmentPrintMethod" layoutX="63.0" layoutY="16.0" prefWidth="150.0" />
+            </children>
+         </Pane>
+         <Pane layoutX="57.0" layoutY="422.0" prefHeight="90.0" prefWidth="585.0">
+            <children>
+               <Button fx:id="onAwardScholarshipButtonClick" layoutX="6.0" layoutY="21.0" mnemonicParsing="false" onAction="#onAwardScholarshipButtonClick" text="Award Scholarship" />
+               <TextField fx:id="awardScholarshipField" layoutX="125.0" layoutY="21.0" prefHeight="26.0" prefWidth="418.0" />
+               <Label fx:id="scholarshipConfirmationText" layoutX="7.0" layoutY="47.0" prefHeight="17.0" prefWidth="464.0" />
+            </children>
+         </Pane>
+         <Pane layoutX="14.0" layoutY="748.0" prefHeight="73.0" prefWidth="368.0">
+            <children>
+               <Button fx:id="onSemesterEndButtonClick" layoutX="24.0" layoutY="14.0" mnemonicParsing="false" onAction="#onSemesterEndButtonClick" text="Semester End" />
+               <Label fx:id="semesterEndConfirmation" layoutX="24.0" layoutY="40.0" prefHeight="17.0" prefWidth="508.0" />
+            </children>
+         </Pane>
+         <Label alignment="CENTER" layoutX="198.0" layoutY="45.0" prefHeight="56.0" prefWidth="205.0" text="Roster functions">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Label>
+         <Label layoutX="70.0" layoutY="133.0" prefHeight="17.0" prefWidth="450.0" text="Add a student (Ex: StudentType LastName FirstName DOB  Major Credits ...)" />
+         <Label layoutX="70.0" layoutY="221.0" prefHeight="17.0" prefWidth="347.0" text="Remove a student (Ex: StudentType LastName FirstName DOB)" />
+         <Label layoutX="70.0" layoutY="323.0" prefHeight="17.0" prefWidth="529.0" text="Change major of specified student (select major from dropdown, LastName FirstName DOB)" />
+         <Label layoutX="70.0" layoutY="414.0" prefHeight="17.0" prefWidth="443.0" text="Award scholarship to a student (LastName FirstName DOB ScholarshipAmount)" />
+         <Label layoutX="653.0" layoutY="45.0" prefHeight="17.0" prefWidth="306.0" text="Student Roster:">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Label>
+         <Label layoutX="653.0" layoutY="697.0" prefHeight="17.0" prefWidth="150.0" text="Enrollment Roster:">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Label>
+         <Label layoutX="38.0" layoutY="688.0" prefHeight="44.0" prefWidth="517.0" text="End the semester, updating credits and showing students that are eligible for graduation" />
+         <Label layoutX="38.0" layoutY="724.0" text="WARNING: Can only be executed once." />
+         <Label layoutX="662.0" layoutY="531.0" prefHeight="17.0" prefWidth="245.0" text="Print roster sorted by selected method">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Label>
+         <Label layoutX="959.0" layoutY="604.0" text="Choose and load data from a txt file" />
+         <Label layoutX="655.0" layoutY="1063.0" prefHeight="17.0" prefWidth="294.0" text="Prints the enrollment roster with selected method" />
+      </children>
+   </AnchorPane>
+</VBox>
